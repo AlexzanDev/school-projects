@@ -172,7 +172,7 @@ p#cont {
         padding: 10px;
     }
 
-    p {
+    p, li {
         font-size: 17px;
     }
 }
