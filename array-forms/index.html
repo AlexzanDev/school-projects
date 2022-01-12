@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/style.css">
+		<script async src="assets/js/main.js"></script>
+        <title>Form and arrays</title>
+    </head>
+    <body>
+		<div class="container">
+			<form onsubmit="return showArray()" class="form">
+				<div class="input">
+					<div class="text">
+						<label for="field">Inserisci qualcosa</label>
+					</div>
+					<div class="field">
+						<input type="text" id="field" name="field" placeholder="Inserisci qualcosa...">
+					</div>
+				</div>
+				<div class="button">
+					<input id="submit" class="btn-submit" type="submit" value="Submit">
+				</div>
+			</form>
+			<div id="output" class="output-cont">
+				<p id="output-text" class="text">Output del form</p>
+			</div>
+		</div>
+    </body>
+</html>
