@@ -7,6 +7,10 @@ var str = "";
 var strDiff = "";
 const totale = document.getElementById('totale');
 const differenze = document.getElementById('differenze');
+const btnTime = document.getElementById('btnTime');
+const clickDiv = document.getElementById('clickValues');
+var endCountdown = false;
+var clickValues = [];
 
 // Count time
 var start = Date.now(); // Get system date
@@ -16,6 +20,13 @@ function count() {
     cont++;
     for(i=1;i<cont;i++) {
         subTimings[i] = (timings[i] - timings[i-1]);
+        clickValues[i] = subTimings[i];
+        if(subTimings[i] < 500) {
+            clickDiv.style.background = 'red';
+        }
+        else {
+            clickDiv.style.background = 'green';
+        }
         console.log(subTimings[i]);
     }
     console.log('Il contatore è a ' + cont);
@@ -34,3 +45,10 @@ function printSubTimings() {
         differenze.innerHTML = 'Differenze tra i tempi: ' + strDiff;
     }
 }
+
+window.onload = function() {
+    var i = 3;
+    setTimeout(function() {
+        btnTime.style.display = "block";
+    }, 3000);
+};

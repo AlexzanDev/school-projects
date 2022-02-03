@@ -11,10 +11,18 @@
     <div class="container">
         <h2>Gioco array millisecondi</h2>
         <p>Questa pagina conta quanto tempo ci metti a premere il bottone.</p>
+        <div id="cntDown">
+            <p>Puoi iniziare dopo tre secondi.</p>
+        </div>
+        <div id="countdown">
+            <p></p>
+        </div>
         <p id="out"></p>
         <p id="totale">Tutti i tempi: </p>
         <p id="differenze">Differenze tra i tempi: </p>
-        <button type="button" onclick='count()'>Clicca per contare il tempo</button>
+        <p>Velocità di click (rosso troppo veloce, verde normale)</p>
+        <div id="clickValues"></div>
+        <button id="btnTime" type="button" onclick='count()'>Clicca per contare il tempo</button>
         <button type="button" onclick='printTimings()'>Clicca per visualizzare il totale</button>
         <button type="button" onclick='printSubTimings()'>Clicca per visualizzare le differenze tra i tempi</button>
     </div>
