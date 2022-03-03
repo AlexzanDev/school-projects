@@ -32,14 +32,15 @@ function cambiacolore() {
     }
 }
 function prendiilcolore() {
+    let tempoDifferenza;
+    tempoDifferenza = Date.now()-prendoiltempo;
+    arraytempiclick.push(tempoDifferenza);
+    console.log(tempoDifferenza);
+    document.getElementById("click").innerText = tempoDifferenza;
     if(cont == 10) {
         for(i=0;i<10;i++) {
             score.innerHTML += "<li>" + textTent[i] + " tentativo: " + arraytempiclick[i] + "ms.</li>";
         }
         return;
     }
-    let tempoDifferenza;
-    tempoDifferenza = Date.now()-prendoiltempo;
-    arraytempiclick.push(tempoDifferenza);
-    document.getElementById("click").innerText = tempoDifferenza;
 }
