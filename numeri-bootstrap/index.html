@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeri Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div id="container" class="container-fluid" style="width: 90%;"></div>
+    <script>
+        const container = document.getElementById('container');
+        for(i=1;i<1001;i++) {
+            if(i % 2 == 0) {
+                if(i % 10 == 0) {
+                    container.innerHTML += ("<span style='color: red; font-weight: bold;'>" + i + "</span>" + " ");
+                }
+                else {
+                    container.innerHTML += ("<span style='font-weight: bold;'>" + i + "</span>" + " ");
+                }
+            }
+            else {
+                if(i % 10 == 0) {
+                    container.innerHTML += ("<span style='color: red;'>" + i + "</span>" + " ");
+                }
+                else {
+                    container.innerHTML += ("<span>" + i + "</span>" + " ");
+                }
+            }
+            if(i % 50 == 0) {
+                container.innerHTML += ("<br>");
+            }
+        }
+    </script>
+</body>
+</html>
