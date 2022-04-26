@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio</title>
+</head>
+<style>
+body {
+    word-wrap: break-word;
+}
+.container {
+    margin: auto;
+    width: 70%;
+    max-width: 70%;
+    min-width: 70%;
+}
+.output {
+    margin-top: 20px;
+}
+/* Phones, iPhone X size. Thanks, CSS-Tricks: https://css-tricks.com/snippets/css/media-queries-for-standard-devices/ */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) { 
+    .container {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+/* Tablets, iPad Pro 9.7" size. */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+    .container {
+        width: 95%;
+        max-width: 95%;
+        min-width: 95%;
+    }
+}
+</style>
+<body>
+    <div class="container">
+        <h1>Numeri primi</h1>
+        <p>Questo programma trova i numeri primi e fattori di un dato numero.</p>
+        <label for="numero">Inserisci un numero</label>
+        <input type="text" name="numero" id="numero">
+        <button type="submit" onclick="numSearch()">Genera</button>
+        <div id="output" class="output"></div>
+    </div>
+    <script>
+        var numMax = 0;
+        var maxFatt = 0;
+        var totFatt = 0;
+
+        function fattorizzatore(num) {
+            var fattore = 1;
+            var checkPrimo = 0;
+            var cont = 0;
+            var stopCiclo = (num / 2);
+            for(fattore=1;fattore<=stopCiclo;fattore++) {
+                if (num % fattore == 0) {
+                    cont++;
+                    checkPrimo++;
+                }
+                if(checkPrimo == 2) {
+                    void(0); // Do nothing. Literally.
+                }
+                else {
+                    totFatt++;
+                }
+            }
+            if (cont > maxFatt) {
+                maxFatt = cont;
+                numMax = num;
+            }
+            return cont;
+        }
+
+        function numSearch() {
+            var numForm = document.getElementById("numero").value;
+            var output = document.getElementById("output");
+            var breakLine = document.createElement("br");
+            var i = 0;
+            // var maxFirst = 1000;
+            // Clear output.
+            output.innerHTML = "";
+            if(numForm <= 0) {
+                alert("Inserisci un numero valido.");
+            }
+            else {
+                if(numForm == 1) {
+                    alert("1 non è primo.");
+                }
+                else if(numForm > 1) {
+                    for (let i=2;i<=numForm;i++) {
+                        let isPrime = 0;
+                        for(let j=2;j<i;j++) {
+                            if(i % j == 0) {
+                                isPrime = 1;
+                                break;
+                            }
+                        }
+                        if(i>1 && isPrime == 0) {
+                            output.append(i + " ");
+                        }
+                    }
+                    output.append(breakLine);
+                }
+            }
+            for(i=0;i<numForm;i++){
+                fattorizzatore(numForm);
+                // maxFirst--;
+            }
+            output.append(("Numero: " + numMax + " Numero di fattori: " + maxFatt));
+            output.append(breakLine);
+            output.append(("Numero totale di fattori: " + totFatt));
+        }
+    </script>
+</body>
+</html>
