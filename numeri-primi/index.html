@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeri primi</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="output"></div>
+    </div>
+    <style>
+    body {
+        word-wrap: break-word;
+    }
+    span {
+        margin-right: 10px;
+        font-size: 20px;
+        cursor: default;
+        font-weight: 600;
+    }
+    .text {
+        margin-top: 10px;
+    }
+    .container {
+        margin: auto;
+        width: 70%;
+        max-width: 70%;
+        min-width: 70%;
+    }
+    .output {
+        margin-top: 20px;
+    }
+    /* Phones, iPhone X size. Thanks, CSS-Tricks: https://css-tricks.com/snippets/css/media-queries-for-standard-devices/ */
+    @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) { 
+        .container {
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+        }
+    }
+    /* Tablets, iPad Pro 9.7" size. */
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+        .container {
+            width: 95%;
+            max-width: 95%;
+            min-width: 95%;
+        }
+    }
+    </style>
+    <script>
+        var output = document.getElementById("output");
+        var cont = 0;
+        for (let i=2;i<=100;i++) {
+            var isPrime = 0;
+            for(let j=2;j<i;j++) {
+                if(i % j == 0) {
+                    isPrime = 1;
+                    break;
+                }
+            }
+            if(i>1 && isPrime == 0) {
+                cont++;
+                output.innerHTML += "<span id='num' class='num'>" + i + "</span>";
+            }
+        }
+        var br = document.createElement("br");
+        output.innerHTML += "<br>";
+        output.innerHTML += "<p class='text'> I numeri primi sono: " + cont + "</p>";
+        $(document).ready(function () {
+            var mousex = 0, mousey = 0;
+            var divLeft, divTop;
+            $('.num').mousedown(function(e) {
+                var offset = $(this).offset();
+                divLeft = parseInt(offset.left);
+                divTop = parseInt(offset.top);
+                mousey = e.pageY;
+                mousex = e.pageX;
+                $(this).bind('mousemove', dragElement);
+            });
+            function dragElement(event) {
+                var left = divLeft + (event.pageX - mousex);
+                var top = divTop + (event.pageY - mousey);
+                var numID = $(this).attr('id');
+                // Ottieni le posizioni dei tre box.
+                var numPos = $("#num").position();
+                $(this).css({
+                    'top':  top + 'px',
+                    'left': left + 'px',
+                    'position' : 'absolute',
+                    'cursor': 'default'
+                });
+            }
+            $(document).mouseup(function() {
+                $('.num').unbind('mousemove');
+            });
+    });
+    </script>
+</body>
+</html>
