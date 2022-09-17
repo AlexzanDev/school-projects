@@ -1,0 +1,491 @@
+/*
+ * Rebecca v.09-22
+ * Copyright 2022 Alessandro Zangrandi
+ * Licensed under WTFPL (http://www.wtfpl.net/)
+ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    line-height: 1.15;
+    color: #000000;
+    -webkit-text-size-adjust: 100%;
+}
+
+h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 36px;
+}
+
+h3 {
+    margin: 0;
+    font-size: 32px;
+}
+
+h4 {
+    margin: 0;
+    font-size: 28px;
+}
+
+h5 {
+    margin: 0;
+    font-size: 24px;
+}
+
+h6 {
+    margin: 0;
+    font-size: 20px;
+}
+
+p {
+    margin: 0;
+}
+
+/* Containers rules */
+.container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl, .container-full {
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .container, .container-sm {
+        max-width: 560px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container, .container-sm, .container-md {
+        max-width: 728px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .container, .container-sm, .container-md, .container-lg {
+        max-width: 920px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container, .container-sm, .container-md, .container-lg, .container-xl {
+        max-width: 1160px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+        max-width: 1360px;
+    }
+}
+
+/* Displays and positions */
+.flex {
+    display: flex;
+}
+
+.inline {
+    display: inline;
+}
+
+.inl-bk {
+    display: inline-block;
+}
+
+.inl-fx {
+    display: inline-flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.none {
+    display: none;
+}
+
+.table {
+    display: table;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.relative {
+    position: relative;
+}
+
+/* Margin and paddings */
+.mgn-0 {
+    margin: 0;
+}
+
+.mgn-x-0 {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.mgn-y-0 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.mgn-l-0 {
+    margin-left: 0;
+}
+
+.mgn-r-0 {
+    margin-right: 0;
+}
+
+.mgn-t-0 {
+    margin-top: 0;
+}
+
+.mgn-b-0 {
+    margin-bottom: 0;
+}
+
+.mgn-5 {
+    margin: 5px;
+}
+
+.mgn-x-5 {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.mgn-y-5 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.mgn-l-5 {
+    margin-left: 5px;
+}
+
+.mgn-r-5 {
+    margin-right: 5px;
+}
+
+.mgn-t-5 {
+    margin-top: 5px;
+}
+
+.mgn-b-5 {
+    margin-bottom: 5px;
+}
+
+.mgn-10 {
+    margin: 10px;
+}
+
+.mgn-x-10 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.mgn-y-10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mgn-l-10 {
+    margin-left: 10px;
+}
+
+.mgn-r-10 {
+    margin-right: 10px;
+}
+
+.mgn-t-10 {
+    margin-top: 10px;
+}
+
+.mgn-b-10 {
+    margin-bottom: 10px;
+}
+
+.mgn-15 {
+    margin: 15px;
+}
+
+.mgn-x-15 {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.mgn-y-15 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.mgn-l-15 {
+    margin-left: 15px;
+}
+
+.mgn-r-15 {
+    margin-right: 15px;
+}
+
+.mgn-t-15 {
+    margin-top: 15px;
+}
+
+.mgn-b-15 {
+    margin-bottom: 15px;
+}
+
+.mgn-20 {
+    margin: 20px;
+}
+
+.mgn-x-20 {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.mgn-y-20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mgn-l-20 {
+    margin-left: 20px;
+}
+
+.mgn-r-20 {
+    margin-right: 20px;
+}
+
+.mgn-t-20 {
+    margin-top: 20px;
+}
+
+.mgn-b-20 {
+    margin-bottom: 20px;
+}
+
+.mgn-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pdng-0 {
+    padding: 0;
+}
+
+.pdng-x-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.pdng-y-0 {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.pdng-l-0 {
+    padding-left: 0;
+}
+
+.pdng-r-0 {
+    padding-right: 0;
+}
+
+.pdng-t-0 {
+    padding-top: 0;
+}
+
+.pdng-b-0 {
+    padding-bottom: 0;
+}
+
+.pdng-5 {
+    padding: 5px;
+}
+
+.pdng-x-5 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.pdng-y-5 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.pdng-l-5 {
+    padding-left: 5px;
+}
+
+.pdng-r-5 {
+    padding-right: 5px;
+}
+
+.pdng-t-5 {
+    padding-top: 5px;
+}
+
+.pdng-b-5 {
+    padding-bottom: 5px;
+}
+
+.pdng-10 {
+    padding: 10px;
+}
+
+.pdng-x-10 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.pdng-y-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.pdng-l-10 {
+    padding-left: 10px;
+}
+
+.pdng-r-10 {
+    padding-right: 10px;
+}
+
+.pdng-t-10 {
+    padding-top: 10px;
+}
+
+.pdng-b-10 {
+    padding-bottom: 10px;
+}
+
+.pdng-15 {
+    padding: 15px;
+}
+
+.pdng-x-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.pdng-y-15 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.pdng-l-15 {
+    padding-left: 15px;
+}
+
+.pdng-r-15 {
+    padding-right: 15px;
+}
+
+.pdng-t-15 {
+    padding-top: 15px;
+}
+
+.pdng-b-15 {
+    padding-bottom: 15px;
+}
+
+.pdng-20 {
+    padding: 20px;
+}
+
+.pdng-x-20 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.pdng-y-20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pdng-l-20 {
+    padding-left: 20px;
+}
+
+.pdng-r-20 {
+    padding-right: 20px;
+}
+
+.pdng-t-20 {
+    padding-top: 20px;
+}
+
+.pdng-b-20 {
+    padding-bottom: 20px;
+}
+
+.pdng-auto {
+    padding-left: auto;
+    padding-right: auto;
+}
+
+/* Flex */
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.jst-btwn {
+    justify-content: space-between;
+}
+
+.jst-arnd {
+    justify-content: space-around;
+}
+
+/* Grid */
+.grid-auto {
+    grid-template-columns: auto auto auto;
+}
+
+/* Alignments */
+.vrt-align {
+    vertical-align: middle;
+}
+
+.align-cnt {
+    align-items: center;
+}
+
+.txt-lt {
+    text-align: left;
+}
+
+.txt-cnt {
+    text-align: center;
+}
+
+.txt-rt {
+    text-align: right;
+}
