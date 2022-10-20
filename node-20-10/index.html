@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="container mt-3">
+  <h2>Inserimento dati</h2>
+  <form action="https://es2010.alessandrozangr.repl.co/stampafile" method="get">
+    <div class="mb-3 mt-3">
+      <label for="stringa">Frase:</label>
+      <input type="text" class="form-control" id="stringa" placeholder="Inserisci una stringa" name="stringa">
+    </div>
+    <button type="submit" class="btn btn-primary">Salva stringa</button>
+  </form>
+  <form action="https://es2010.alessandrozangr.repl.co/controllo" method="get">
+    <div class="mb-3 mt-3">
+        <p>Genera un numero casuale da 1 a 100 e controlla se è pari o dispari</p>
+    </div>
+    <button type="submit" class="btn btn-primary">Genera numero</button>
+  </form>
+  <form action="https://es2010.alessandrozangr.repl.co/somma" method="get">
+    <div class="mb-3 mt-3">
+      <label for="num1">Primo numero:</label>
+      <input type="text" class="form-control" id="num1" placeholder="Inserisci un numero" name="num1">
+      <label for="num2">Secondo numero:</label>
+      <input type="text" class="form-control" id="num2" placeholder="Inserisci un numero" name="num2">
+    </div>
+    <button type="submit" class="btn btn-primary">Somma</button>
+  </form>
+</div>
+
+</body>
+</html>
